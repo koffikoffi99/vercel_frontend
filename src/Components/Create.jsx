@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 const Create = () => {
     const [task, setTask] = useState()
     const handleAdd = () => {
-        axios.post('http://localhost:3000/add', { task: task })
+        axios.post('https://vercel-backend-mdfe.onrender.com/add', { task: task })
             .then(result => {
                 setTask(''); // vide le champ après ajout
                 // ici on peut ajouter directement l'élément

@@ -10,7 +10,7 @@ const Home = () => {
     const [todos, setTodos] = useState([])
     useEffect(() => {
         const fetchTodos = () => {
-            axios.get('http://localhost:3000/get')
+            axios.get('https://vercel-backend-mdfe.onrender.com/get')
                 .then(result => setTodos(result.data))
                 .catch(err => console.log(err));
         };
@@ -28,7 +28,7 @@ const Home = () => {
 
 
     const handleEdit = (id) => {
-        axios.put('http://localhost:3000/update/' + id)
+        axios.put('https://vercel-backend-mdfe.onrender.com/update/' + id)
             .then(result => {
                 // mettre à jour localement sans reload
                 setTodos(prevTodos =>
@@ -41,7 +41,7 @@ const Home = () => {
     };
 
     const handDelete = (id) => {
-        axios.delete('http://localhost:3000/delete/' + id)
+        axios.delete('https://vercel-backend-mdfe.onrender.com/delete/' + id)
             .then(result => {
                 setTodos(prevTodos => prevTodos.filter(todo => todo._id !== id));
             })
